@@ -5,23 +5,18 @@
 import tkinter as tk
 from tkinter import ttk
 
-# Create the main application window
 root = tk.Tk()
 root.title("Zoo Keeper Application Form")
 
-# Add a title label
 title_label = tk.Label(root, text="Zoo Keeper Application Form", font=("Helvetica", 16, "bold"))
 title_label.grid(row=0, column=0, columnspan=2, pady=10)
 
-# Add a description label
 desc_label = tk.Label(root, text="Please complete the form. Mandatory fields are marked with a *", font=("Helvetica", 10))
 desc_label.grid(row=1, column=0, columnspan=2, pady=5)
 
-# Add contact details frame
 contact_frame = tk.LabelFrame(root, text="CONTACT DETAILS", padx=10, pady=10)
 contact_frame.grid(row=2, column=0, columnspan=2, padx=10, pady=10, sticky="ew")
 
-# Contact details labels and entries
 tk.Label(contact_frame, text="Name*").grid(row=0, column=0, sticky="w")
 tk.Entry(contact_frame).grid(row=0, column=1, padx=5, pady=5)
 
@@ -31,11 +26,9 @@ tk.Entry(contact_frame).grid(row=1, column=1, padx=5, pady=5)
 tk.Label(contact_frame, text="Email*").grid(row=2, column=0, sticky="w")
 tk.Entry(contact_frame).grid(row=2, column=1, padx=5, pady=5)
 
-# Add personal information frame
 personal_frame = tk.LabelFrame(root, text="PERSONAL INFORMATION", padx=10, pady=10)
 personal_frame.grid(row=3, column=0, columnspan=2, padx=10, pady=10, sticky="ew")
 
-# Personal information labels and entries
 tk.Label(personal_frame, text="Age*").grid(row=0, column=0, sticky="w")
 tk.Entry(personal_frame).grid(row=0, column=1, padx=5, pady=5)
 
@@ -46,18 +39,14 @@ gender_combobox.grid(row=1, column=1, padx=5, pady=5)
 tk.Label(personal_frame, text="When did you first know you wanted to be a zoo-keeper?").grid(row=2, column=0, sticky="w")
 tk.Entry(personal_frame).grid(row=2, column=1, padx=5, pady=5)
 
-# Add favorite animals frame
 animals_frame = tk.LabelFrame(root, text="PICK YOUR FAVORITE ANIMALS", padx=10, pady=10)
 animals_frame.grid(row=4, column=0, columnspan=2, padx=10, pady=10, sticky="ew")
 
-# Favorite animals checkboxes
 animals = ["Zebra", "Cat", "Anaconda", "Human", "Elephant", "Wildebeest", "Pigeon", "Crab"]
 for idx, animal in enumerate(animals):
     tk.Checkbutton(animals_frame, text=animal).grid(row=idx // 2, column=idx % 2, sticky="w")
 
-# Add submit button
 submit_button = tk.Button(root, text="Submit Application")
 submit_button.grid(row=5, column=0, columnspan=2, pady=10)
 
-# Run the application
 root.mainloop()
